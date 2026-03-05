@@ -7,6 +7,12 @@ public class TestAppHost() : DistributedApplicationFactory(typeof(Projects.Demo_
     await StartAsync();
   }
 
+  public override async ValueTask DisposeAsync()
+  {
+    await base.DisposeAsync();
+    GC.SuppressFinalize(this);
+  }
+
   public string GetWebHttpUrl()
   {
     return GetEndpoint(ResourceNames.Web, "http").ToString();
