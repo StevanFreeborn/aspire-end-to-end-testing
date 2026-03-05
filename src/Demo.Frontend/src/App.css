@@ -1,0 +1,56 @@
+.todo-form {
+  margin-bottom: 1.25rem;
+}
+
+.todo-input {
+  padding: 0.5rem;
+  width: 15.625rem;
+  margin-right: 0.625rem;
+}
+
+.todo-submit {
+  padding: 0.5rem 1rem;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  max-width: 25rem;
+  margin: 0 auto;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.todo-item-content {
+  display: flex;
+  align-items: center;
+}
+
+.todo-checkbox {
+  margin-right: 0.625rem;
+  cursor: pointer;
+}
+
+.todo-text {
+  text-decoration: none;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+}
+
+.todo-delete-btn {
+  padding: 0.25rem 0.5rem;
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
