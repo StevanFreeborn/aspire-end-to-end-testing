@@ -4,7 +4,7 @@ var postgres = builder.AddPostgres(ResourceNames.Postgres);
 var postgresdb = postgres.AddDatabase(ResourceNames.Database);
 
 var api = builder.AddGolangApp(ResourceNames.Api, "../Demo.Backend")
-  .WithHttpEndpoint(env: "PORT")
+  .WithHttpEndpoint(port: 8080, env: "PORT")
   .WithReference(postgresdb)
   .WaitFor(postgresdb);
 
