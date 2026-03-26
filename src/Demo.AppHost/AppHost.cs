@@ -4,14 +4,13 @@ var postgres = builder.AddPostgres(ResourceNames.Postgres);
 var postgresdb = postgres.AddDatabase(ResourceNames.Database);
 
 var api = builder.AddGolangApp(ResourceNames.Api, "../Demo.Backend")
-  .WithHttpEndpoint(port: 8080, env: "PORT")
+  .WithHttpEndpoint(env: "PORT")
   .WithReference(postgresdb)
   .WaitFor(postgresdb);
 
 builder.AddJavaScriptApp(ResourceNames.Web, "../Demo.Frontend")
-  .WithHttpEndpoint(port: 5173, env: "PORT")
+  .WithHttpEndpoint(env: "PORT")
   .WithReference(api)
   .WaitFor(api);
 
 builder.Build().Run();
-
