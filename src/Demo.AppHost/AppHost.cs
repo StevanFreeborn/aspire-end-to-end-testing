@@ -9,7 +9,7 @@ var api = builder.AddGolangApp(ResourceNames.Api, "../Demo.Backend")
   .WaitFor(postgresdb);
 
 builder.AddJavaScriptApp(ResourceNames.Web, "../Demo.Frontend")
-  .WithHttpEndpoint(env: "PORT")
+  .WithHttpEndpoint(port: 5173, env: "PORT")
   .WithReference(api)
   .WaitFor(api);
 
